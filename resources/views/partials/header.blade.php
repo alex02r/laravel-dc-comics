@@ -5,7 +5,7 @@
                 DC COMICS
             </div>
             <div class="col-6">
-                <ul class="list-unstyled d-flex">
+                <ul class="list-unstyled d-flex gap-5">
                     <li><a href="">Home</a></li>
                     <li><a href="">Comics</a></li>
                     <li><a href="">About</a></li>
