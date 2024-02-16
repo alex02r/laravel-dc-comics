@@ -11,7 +11,7 @@
                         <img src="{{ $comic->thumb }}" class="card-img-top" alt="{{ $comic->title }}" style="height: 350px">
                         <div class="card-body">
                           <h5 class="card-title">{{ $comic->title }}</h5>
-                          <a href="" class="btn btn-primary">Dettaglio</a>
+                          <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Dettaglio</a>
                         </div>
                     </div>
                 </div>
