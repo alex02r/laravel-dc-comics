@@ -8,7 +8,7 @@
                   <h1>COMIC</h1>
                 </div>
                 <div>
-                  <a href="{{ route('comics.edit', ['comic'=>$comic->id]) }}" class="btn btn-warning">Modifica</a>
+                  <a href="{{ route('comics.edit', ['comic'=>$comic]) }}" class="btn btn-warning">Modifica</a>
                 </div>
               </div>
             </div>
