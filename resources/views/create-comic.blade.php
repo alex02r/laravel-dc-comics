@@ -42,7 +42,7 @@
 
                         <div class="mb-3">
                             <label for="date" class="form-label">Inserisci data di uscita:</label>
-                            <input type="text" name="date" id="date" class="form-control" required>
+                            <input type="date" name="date" id="date" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
