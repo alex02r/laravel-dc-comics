@@ -3,7 +3,14 @@
     <div class="container">
         <div class="row row-gap-4">
             <div class="col-12">
-                <h1>Comics</h1>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h1>Comics</h1>
+                    </div>
+                    <div>
+                        <a href="{{ route('comics.create')}}" class="btn btn-success">Add Comic</a>
+                    </div>
+                </div>
             </div>
             @foreach ($comics as $comic)
                 <div class="col-3">
