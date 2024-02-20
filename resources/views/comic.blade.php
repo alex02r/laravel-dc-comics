@@ -7,9 +7,13 @@
                 <div>
                   <h1>COMIC</h1>
                 </div>
-                <div>
+                <div class="d-flex gap-3">
                   <a href="{{ route('comics.edit', ['comic'=>$comic]) }}" class="btn btn-warning">Modifica</a>
-                  <a href="{{ route('comics.destroy', ['comic'=>$comic->id]) }}" class="btn btn-danger ms-2">Elimina</a>
+                  <form action="{{ route('comics.destroy', ['comic'=>$comic->id]) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Elimina</button>
+                  </form>
                 </div>
               </div>
             </div>
