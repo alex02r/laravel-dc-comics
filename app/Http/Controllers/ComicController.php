@@ -42,7 +42,7 @@ class ComicController extends Controller
      */
     public function store(StoreComicRequest $request)
     {
-        $dati = $this->validation($request->all());
+        $dati = $request->all();
         
         $new_comic = new Comic;
         $new_comic->fill($dati);
@@ -83,7 +83,7 @@ class ComicController extends Controller
      */
     public function update(UpdateComicRequest $request, $id)
     {
-        $dati = $this->validation($request->all());
+        $dati = $request->all();
         
         
         $comic = Comic::find($id);
@@ -105,37 +105,5 @@ class ComicController extends Controller
         $comic = Comic::find($id);
         $comic->delete();
         return redirect()->route('comics.index');
-    }
-    private function validation($data){
-        $validator = FacadesValidator::make(
-            $data, 
-            [
-                'title'=>'required|max:100',
-                'description'=>'required',
-                'thumb'=>'required',
-                'price'=>'required|max:20',
-                'sale_date'=>'required',
-                'series'=>'required|max:100',
-                'type'=>'required|max:100',
-                'artists'=>'required',
-                'writers'=>'required'
-            ],
-            [
-                'title.required'=>'Il titolo deve essere obbligatorio',
-                'title.max'=>'Lunghezza massima del titolo: 100 caratteri',
-                'description'=>'La descrizione deve essere obbligatoria',
-                'thumb'=>'L\'immagine deve essere obbligatoria',
-                'price.required'=>'Il prezzo deve essere obbligatorio',
-                'price.max'=>'Lunghezza massima del perzzo: 20 caratteri',
-                'sale_date'=>'La data deve essere obbligatoria',
-                'series.required'=>'La Serie deve essere obbligatoria',
-                'series.max'=>'Lunghezza massima della serie: 100 caratteri',
-                'type.required'=>'Il tipo deve essere obbligatorio',
-                'type.max'=>'Lunghezza massima del tipo: 100 caratteri',
-                'artists'=>'Gli artisti sono obbligatori',
-                'writers'=>'Gli scrittori sono obbligatori'
-            ])->validate();
-
-        return $validator;
     }
 }
