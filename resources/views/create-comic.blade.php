@@ -12,37 +12,37 @@
                         
                         <div class="mb-3">
                             <label for="img" class="form-label">Inserisci link dell'immagine :</label>
-                            <input type="text" name="img" id="img" class="form-control">
+                            <input type="text" name="img" id="img" class="form-control" value="{{ old('img') }}">
                         </div>
 
                         <div class="mb-3">
                             <label for="title" class="form-label">Inserisci titolo:</label>
-                            <input type="text" name="title" id="title" class="form-control" required>
+                            <input type="text" name="title" id="title" class="form-control" value="{{ old('title') }}" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="price" class="form-label">Inserisci prezzo:</label>
-                            <input type="text" name="price" id="price" class="form-control" required>
+                            <input type="text" name="price" id="price" class="form-control" value="{{ old('price') }}" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="description" class="form-label">Inserisci la descrizione:</label>
-                            <textarea name="description" id="description" class="form-control" required></textarea>
+                            <textarea name="description" id="description" class="form-control" value="{{ old('description') }}" required></textarea>
                         </div>
 
                         <div class="mb-3">
                             <label for="series" class="form-label">Inserisci la serie:</label>
-                            <input type="text" name="series" id="series" class="form-control" required>
+                            <input type="text" name="series" id="series" class="form-control" value="{{ old('series') }}" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="type" class="form-label">Inserisci il tipo:</label>
-                            <input type="text" name="type" id="type" class="form-control" required>
+                            <input type="text" name="type" id="type" class="form-control" value="{{ old('type') }}" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="sale_date" class="form-label">Inserisci data di uscita:</label>
-                            <input type="date" name="sale_date" id="sale_date" class="form-control" required>
+                            <input type="date" name="sale_date" id="sale_date" class="form-control" value="{{ old('sale_date') }}" required>
                         </div>
 
                         <div class="mb-3">
@@ -50,7 +50,7 @@
                                 Inserisci gli artisti: <br>
                                 <span class="text-secondary">Separa i nomi usando "," (Es: example, example1, ...)</span>
                             </label>
-                            <input type="text" name="artists" id="artists" class="form-control" required>
+                            <input type="text" name="artists" id="artists" class="form-control" value="{{ old('artists') }}" required>
                         </div>
 
                         <div class="mb-3">
@@ -58,7 +58,7 @@
                                 Inserisci gli scrittori: <br>
                                 <span class="text-secondary">Separa i nomi usando ","  (Es: example, example1, ...)</span>
                             </label>
-                            <input type="text" name="writers" id="writers" class="form-control" required>
+                            <input type="text" name="writers" id="writers" class="form-control" value="{{ old('writers') }}" required>
                         </div>
 
                         <input type="submit" value="invia" class="btn btn-primary">
