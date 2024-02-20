@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 use function PHPUnit\Framework\isNull;
 
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
+
 class ComicController extends Controller
 {
     /**
