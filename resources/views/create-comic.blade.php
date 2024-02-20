@@ -12,7 +12,7 @@
                         
                         <div class="mb-3">
                             <label for="img" class="form-label">Inserisci link dell'immagine :</label>
-                            <input type="text" name="img" id="img" class="form-control" required>
+                            <input type="text" name="img" id="img" class="form-control">
                         </div>
 
                         <div class="mb-3">

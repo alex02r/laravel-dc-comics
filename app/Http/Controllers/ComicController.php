@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comic;
 
+use function PHPUnit\Framework\isNull;
+
 class ComicController extends Controller
 {
     /**
@@ -41,7 +43,12 @@ class ComicController extends Controller
         $new_comic = new Comic;
         $new_comic->title = $dati['titolo'];
         $new_comic->description = $dati['description'];
-        $new_comic->thumb = $dati['img'];
+        if (isNull($dati['img'])) {
+            $new_comic->thumb = "https://kare.ee/images/no-image.jpg";
+        }else{
+            $new_comic->thumb = $dati['img'];
+        }
+        
         $new_comic->price = $dati['price'];
         $new_comic->series = $dati['series'];
         $new_comic->sale_date = $dati['date'];
@@ -86,21 +93,26 @@ class ComicController extends Controller
     public function update(Request $request, $id)
     {
         $dati = $request->all();
-
+        
+        
         $comic = Comic::find($id);
-
         $comic->title = $dati['titolo'];
         $comic->description = $dati['description'];
-        $comic->thumb = $dati['img'];
+        if (isNull($dati['img'])) {
+            $comic->thumb = "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.mylittleadventure.com%2Fimages%2Fdefault%2Fdefault-img.png&tbnid=asfSaCEGE8KLaM&vet=12ahUKEwjq4oXa5reEAxVp7rsIHdVtDz8QMygSegQIARB3..i&imgrefurl=https%3A%2F%2Famp.mylittleadventure.it%2Fbest-things%2Fistanbul%2Ftours%2Fil-meglio-di-istanbul-salta-la-fila-di-santa-sofia-la-basilica-cisterna-e-la-moschea-blu-aufvNSCi&docid=IiEKmk-yr0TJTM&w=400&h=250&q=img%20default&ved=2ahUKEwjq4oXa5reEAxVp7rsIHdVtDz8QMygSegQIARB3";
+        }else{
+            $comic->thumb = $dati['img'];
+        }
+        
         $comic->price = $dati['price'];
         $comic->series = $dati['series'];
         $comic->sale_date = $dati['date'];
         $comic->type = $dati['type'];
         $comic->artists = $dati['artists'];
         $comic->writers = $dati['writers'];
-        $comic->update();
+        $comic->save();
 
-        return redirect()->route('comics.show', compact('id'));
+        return redirect()->route('comics.show', ['comic'=>$id]);
     }
 
     /**
