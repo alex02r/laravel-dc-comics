@@ -39,7 +39,7 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $dati = $request->all();
+        $dati = $this->validation($request->all());
         
         $new_comic = new Comic;
 
@@ -86,7 +86,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dati = $request->all();
+        $dati = $this->validation($request->all());
         
         
         $comic = Comic::find($id);
@@ -142,7 +142,7 @@ class ComicController extends Controller
                 'artists'=>'Gli artisti sono obbligatori',
                 'writers'=>'Gli scrittori sono obbligatori'
             ])->validate();
-            
+
         return $validator;
     }
 }
