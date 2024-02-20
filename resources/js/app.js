@@ -12,10 +12,16 @@ ModalDeleteButton.forEach(elem =>{
         //non invia i valori della form
         event.preventDefault();
 
-        const modal = document.getElementById('modal-delete');
+        const title_comic = elem.getAttribute('title-comic');
 
+        const modal = document.getElementById('modal-delete');
+        
         const CreateModal = new bootstrap.Modal(modal);
         CreateModal.show();
+
+        console.log(title_comic);
+        const title = document.getElementById('title');
+        title.innerText = title_comic;
 
         const confirmDelete = document.querySelector('button.btn.btn-primary');
         confirmDelete.addEventListener('click', function(){
