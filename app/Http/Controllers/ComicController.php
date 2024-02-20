@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comic;
+use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 use function PHPUnit\Framework\isNull;
 
@@ -113,5 +114,35 @@ class ComicController extends Controller
         $comic = Comic::find($id);
         $comic->delete();
         return redirect()->route('comics.index');
+    }
+    private function validation($data){
+        $validator = FacadesValidator::make(
+            $data, 
+            [
+                'title'=>'required|max:100',
+                'description'=>'required',
+                'price'=>'required|max:20',
+                'sale_date'=>'required',
+                'series'=>'required|max:100',
+                'type'=>'required|max:100',
+                'artists'=>'required',
+                'writers'=>'required'
+            ],
+            [
+                'title.required'=>'Il titolo deve essere obbligatorio',
+                'title.max'=>'Lunghezza massima del titolo: 100 caratteri',
+                'description'=>'La descrizione deve essere obbligatoria',
+                'price.required'=>'Il prezzo deve essere obbligatorio',
+                'price.max'=>'Lunghezza massima del perzzo: 20 caratteri',
+                'sale_date'=>'La data deve essere obbligatoria',
+                'series.required'=>'La Serie deve essere obbligatoria',
+                'series.max'=>'Lunghezza massima della serie: 100 caratteri',
+                'type.required'=>'Il tipo deve essere obbligatorio',
+                'type.max'=>'Lunghezza massima del tipo: 100 caratteri',
+                'artists'=>'Gli artisti sono obbligatori',
+                'writers'=>'Gli scrittori sono obbligatori'
+            ])->validate();
+            
+        return $validator;
     }
 }
