@@ -9,6 +9,7 @@
                 </div>
                 <div>
                   <a href="{{ route('comics.edit', ['comic'=>$comic]) }}" class="btn btn-warning">Modifica</a>
+                  <a href="{{ route('comics.destroy', ['comic'=>$comic->id]) }}" class="btn btn-danger ms-2">Elimina</a>
                 </div>
               </div>
             </div>
