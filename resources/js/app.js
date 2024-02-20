@@ -19,7 +19,7 @@ ModalDeleteButton.forEach(elem =>{
 
         const confirmDelete = document.querySelector('button.btn.btn-primary');
         confirmDelete.addEventListener('click', function(){
-            button.parent.submit();
+            elem.parentElement.submit();
         });
     })
 })
