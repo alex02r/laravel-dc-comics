@@ -20,8 +20,8 @@
                         @csrf
                         @method('PUT')
                         <div class="mb-3">
-                            <label for="img" class="form-label">Modifica link dell'immagine :</label>
-                            <input type="text" name="img" id="img" class="form-control" value="{{ old('img') ?? $comic->thumb }}">
+                            <label for="thumb" class="form-label">Modifica link dell'immagine :</label>
+                            <input type="text" name="thumb" id="thumb" class="form-control" value="{{ old('thumb') ?? $comic->thumb }}">
                         </div>
 
                         <div class="mb-3">

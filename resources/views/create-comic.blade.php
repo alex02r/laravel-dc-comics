@@ -20,8 +20,8 @@
                         @csrf
                         
                         <div class="mb-3">
-                            <label for="img" class="form-label">Inserisci link dell'immagine :</label>
-                            <input type="text" name="img" id="img" class="form-control" value="{{ old('img') }}">
+                            <label for="thumb" class="form-label">Inserisci link dell'immagine :</label>
+                            <input type="text" name="thumb" id="thumb" class="form-control" value="{{ old('thumb') }}">
                         </div>
 
                         <div class="mb-3">
@@ -36,7 +36,7 @@
 
                         <div class="mb-3">
                             <label for="description" class="form-label">Inserisci la descrizione:</label>
-                            <textarea name="description" id="description" class="form-control" value="{{ old('description') }}" required></textarea>
+                            <textarea name="description" id="description" class="form-control"required>{{ old('description') }}</textarea>
                         </div>
 
                         <div class="mb-3">
