@@ -7,6 +7,15 @@
             </div>
             <div class="col-8">
                 <div class="bg-white rounded p-5 text-dark">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{ route('comics.update', ['comic'=>$comic->id]) }}" method="post">
                         @csrf
                         @method('PUT')
