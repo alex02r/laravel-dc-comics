@@ -1,3 +1,4 @@
+@extends('layouts.mockup')
 @section('content')
     <div class="container py-5">
         <div class="row justify-content-center">
@@ -11,7 +12,7 @@
                         @method('PUT')
                         <div class="mb-3">
                             <label for="img" class="form-label">Modifica link dell'immagine :</label>
-                            <input type="text" name="img" id="img" class="form-control" value="{{ $comic->thumb }}" required>
+                            <input type="text" name="img" id="img" class="form-control" value="{{ $comic->thumb }}">
                         </div>
 
                         <div class="mb-3">
