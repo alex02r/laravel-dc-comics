@@ -125,6 +125,6 @@ class ComicController extends Controller
     {
         $comic = Comic::find($id);
         $comic->delete();
-        return redirect()->route('show.index');
+        return redirect()->route('comics.index');
     }
 }
