@@ -9,7 +9,7 @@
                 </div>
                 <div class="d-flex gap-3">
                   <a href="{{ route('comics.edit', ['comic'=>$comic]) }}" class="btn btn-warning">Modifica</a>
-                  <form action="{{ route('comics.destroy', ['comic'=>$comic->id]) }}" method="post">
+                  <form action="{{ route('comics.destroy', ['comic'=>$comic->id]) }}" method="post" onsubmit="return confirm('Sei sicuro di voler eliminare il comic?')">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Elimina</button>
