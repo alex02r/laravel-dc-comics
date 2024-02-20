@@ -16,8 +16,8 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="titolo" class="form-label">Inserisci titolo:</label>
-                            <input type="text" name="titolo" id="titolo" class="form-control" required>
+                            <label for="title" class="form-label">Inserisci titolo:</label>
+                            <input type="text" name="title" id="title" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
@@ -41,8 +41,8 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="date" class="form-label">Inserisci data di uscita:</label>
-                            <input type="date" name="date" id="date" class="form-control" required>
+                            <label for="sale_date" class="form-label">Inserisci data di uscita:</label>
+                            <input type="date" name="sale_date" id="sale_date" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
